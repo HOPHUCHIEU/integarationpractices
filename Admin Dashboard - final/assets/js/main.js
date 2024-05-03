@@ -2,10 +2,10 @@
 let list = document.querySelectorAll(".navigation li");
 
 function activeLink() {
-  list.forEach((item) => {
-    item.classList.remove("hovered");
-  });
-  this.classList.add("hovered");
+	list.forEach((item) => {
+		item.classList.remove("hovered");
+	});
+	this.classList.add("hovered");
 }
 
 list.forEach((item) => item.addEventListener("mouseover", activeLink));
@@ -16,12 +16,12 @@ let navigation = document.querySelector(".navigation");
 let main = document.querySelector(".main");
 
 toggle.onclick = function () {
-  navigation.classList.toggle("active");
-  main.classList.toggle("active");
+	navigation.classList.toggle("active");
+	main.classList.toggle("active");
 };
 
 //biểu đồ cột
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
 	var ctx = document.getElementById('salaryChart').getContext('2d');
 
 	var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
 				data: salaries,
 				backgroundColor: 'rgba(46, 204, 113, 0.5)',
 				borderColor: 'rgba(46, 204, 113, 1)',
-				borderWidth:1
+				borderWidth: 1
 			}]
 		},
 		options: {
@@ -65,31 +65,31 @@ document.addEventListener('DOMContentLoaded', function() {
 	});
 });
 /*js thông báo */
-var box  = document.getElementById('box');
-    var down = false;
-    function toggleNotifi(){
-    	if (down) {
-            box.style.height  = '0px';
-            box.style.opacity = 0;
-            down = false;
-        }else {
-            box.style.height  = '510px';
-            box.style.opacity = 1;
-            down = true;
-        }
-    }
- /* hàm tổng số nhân viên */
- 
- function getTotalEmployees() {
-    var xhr = new XMLHttpRequest();
-    xhr.open("GET", "HR_2024.bak", true);
-    xhr.onload = function() {
-        if (this.status === 200) {
-            var employees = JSON.parse(this.responseText);
-            var totalEmployees = employees.length;
-            console.log("Total Employees: " + totalEmployees);
-        }
-    };
-    xhr.send();
+var box = document.getElementById('box');
+var down = false;
+function toggleNotifi() {
+	if (down) {
+		box.style.height = '0px';
+		box.style.opacity = 0;
+		down = false;
+	} else {
+		box.style.height = '510px';
+		box.style.opacity = 1;
+		down = true;
+	}
 }
+/* hàm tổng số nhân viên */
 
+function getTotalEmployees() {
+	var xhr = new XMLHttpRequest();
+	xhr.open("GET", "HR_2024.bak", true);
+	xhr.onload = function () {
+		if (this.status === 200) {
+			var employees = JSON.parse(this.responseText);
+			var totalEmployees = employees.length;
+			console.log("Total Employees: " + totalEmployees);
+		}
+	};
+	xhr.send();
+}
+/*link liên kết tới trang login*/

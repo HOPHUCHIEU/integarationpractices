@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Employee Dashboard</title>
-    
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="assets/css/style.css">
     <script>
         function loadEmployees() {
             var xhr = new XMLHttpRequest();
             xhr.open("GET", "employees.php", true);
-            xhr.onload = function() {
+            xhr.onload = function () {
                 if (this.status === 200) {
                     var employees = JSON.parse(this.responseText);
                     var table = document.getElementById("employeesTable");
@@ -39,11 +39,7 @@
             <ul>
                 <li>
                     <a href="#">
-                        <span class="">
-                            <img src="assets/imgs/CEO.png" alt="">
-                            <!--<ion-icon name="logo-apple"></ion-icon>-->
-                        </span>
-                        <span class="title">CEO MEMO</span>
+                        <img src="assets/imgs/hr.jpg" alt="">
                     </a>
                 </li>
 
@@ -86,15 +82,32 @@
                 <li>
                     <a href="#">
                         <span class="icon">
+                            <ion-icon name="bag-add-outline"></ion-icon>
+                        </span>
+                        <span class="title">Hepl Center</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="./assets/login.html" id="signOutLink">
+                        <span class="icon">
                             <ion-icon name="log-out-outline"></ion-icon>
                         </span>
                         <span class="title">Sign Out</span>
                     </a>
+                    <script>
+                        document.getElementById("signOutLink").addEventListener("click", function (event) {
+                            event.preventDefault(); // Prevent the default behavior of following the link
+
+                            // Open a new tab with the login page
+                            window.open(this.getAttribute("href"), "_blank");
+                        });
+                    </script>
                 </li>
             </ul>
         </div>
 
-        
+
 
         <!-- ========================= chi tiết người dùng ==================== -->
         <div class="main">
@@ -115,74 +128,73 @@
                 </div>
             </div>
 
-            <!--biểu đồ cột-->
-        <div class="container1">
-            <nav>
-                <div class="logo">Payroll</div>
-                <div class="icon" onclick="toggleNotifi()">
-                    <img src="assets/imgs/bell.png" alt=""> <span>6</span>
-                </div>
-                <div class="notifi-box" id="box">
-                    <h2>Thông báo <span>6</span></h2>
-                    <div class="notifi-item">
-                        <img src="assets/imgs/avatar1.png" alt="">
-                        <div class="text">
-                           <h4>Hồ Phúc Hiếu</h4>
-                           <p>@Hồ Phúc Hiếu</p>
-                        </div> 
+            <!--thanh thông báo-->
+            <div class="container1">
+                <nav>
+                    <div class="logo">Payroll</div>
+                    <div class="icon" onclick="toggleNotifi()">
+                        <img src="assets/imgs/bell.png" alt=""> <span>6</span>
                     </div>
-        
-                    <div class="notifi-item">
-                        <img src="assets/imgs/avatar2.png" alt="img">
-                        <div class="text">
-                           <h4>Hồ Phúc Hiếu</h4>
-                           <p style="color: #aaa;
-                           font-size: 12px;">@Hồ Phúc Hiếu</p>
-                        </div> 
-                    </div>
+                    <div class="notifi-box" id="box">
+                        <h2>Thông báo <span>6</span></h2>
+                        <div class="notifi-item">
+                            <img src="assets/imgs/avatar1.png" alt="">
+                            <div class="text">
+                                <h4>Hồ Phúc Hiếu</h4>
+                                <p>@Hồ Phúc Hiếu</p>
+                            </div>
+                        </div>
 
-                    <div class="notifi-item">
-                        <img src="assets/imgs/avatar2.png" alt="img">
-                        <div class="text">
-                           <h4>Hồ Phúc Hiếu</h4>
-                           <p style="color: #aaa;
+                        <div class="notifi-item">
+                            <img src="assets/imgs/avatar2.png" alt="img">
+                            <div class="text">
+                                <h4>Hồ Phúc Hiếu</h4>
+                                <p style="color: #aaa;
                            font-size: 12px;">@Hồ Phúc Hiếu</p>
-                        </div> 
-                    </div>
-        
-                    <div class="notifi-item">
-                        <img src="assets/imgs/avatar3.png" alt="img">
-                        <div class="text">
-                           <h4>Hồ Phúc Hiếu</h4>
-                           <p>@Hồ Phúc Hiếu</p>
-                        </div> 
-                    </div>
-        
-                    <div class="notifi-item">
-                        <img src="assets/imgs/avatar4.png" alt="img" >
-                        <div class="text">
-                           <h4>Hồ Phúc Hiếu</h4>
-                           <p>@Hồ Phúc Hiếu</p>
-                        </div> 
-                    </div>
-        
-                    <div class="notifi-item">
-                        <img src="assets/imgs/avatar5.png" alt="img">
-                        <div class="text">
-                           <h4>Hồ Phúc Hiếu</h4>
-                           <p>@Hồ Phúc Hiếu</p>
-                        </div> 
-                    </div>
-        
-                </div>
-            </nav>
-            <script src="script.js"></script>
+                            </div>
+                        </div>
 
-            <h4>Payroll Summary</h4>
-           <canvas id="salaryChart" width="1000" height="400"></canvas>
-        
-        </div>
-        <!--kết thúc biểu đồ cột-->
+                        <div class="notifi-item">
+                            <img src="assets/imgs/avatar2.png" alt="img">
+                            <div class="text">
+                                <h4>Hồ Phúc Hiếu</h4>
+                                <p style="color: #aaa;
+                           font-size: 12px;">@Hồ Phúc Hiếu</p>
+                            </div>
+                        </div>
+
+                        <div class="notifi-item">
+                            <img src="assets/imgs/avatar3.png" alt="img">
+                            <div class="text">
+                                <h4>Hồ Phúc Hiếu</h4>
+                                <p>@Hồ Phúc Hiếu</p>
+                            </div>
+                        </div>
+
+                        <div class="notifi-item">
+                            <img src="assets/imgs/avatar4.png" alt="img">
+                            <div class="text">
+                                <h4>Hồ Phúc Hiếu</h4>
+                                <p>@Hồ Phúc Hiếu</p>
+                            </div>
+                        </div>
+
+                        <div class="notifi-item">
+                            <img src="assets/imgs/avatar5.png" alt="img">
+                            <div class="text">
+                                <h4>Hồ Phúc Hiếu</h4>
+                                <p>@Hồ Phúc Hiếu</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </nav>
+                <script src="script.js"></script>
+                <h4>Payroll Summary</h4>
+                <canvas id="salaryChart" width="1000" height="400"></canvas>
+
+            </div>
+            <!--kết thúc thanh thông báo payroll-->
 
             <!-- ======================= Cards ================== -->
             <div class="cardBox">
@@ -190,8 +202,8 @@
                     <div>
                         <div class="numbers">
                             <script>
-                            getTotalEmployees();
-                        </script>
+                                getTotalEmployees();
+                            </script>
                             0
                         </div>
                         <div class="cardName">Total Employee</div>
@@ -244,7 +256,7 @@
                         <a href="#" class="btn">View All</a>
                     </div>
 
-                    <table id="employeesTable"  onload="loadEmployees()">
+                    <table id="employeesTable" onload="loadEmployees()">
                         <thead>
                             <tr>
                                 <th>Name</th>
@@ -259,12 +271,12 @@
                         <div class="pagination">
                             <a href="#" class="btn-pagination"><ion-icon name="arrow-back-sharp"></ion-icon></a>
                             <a href="#" class="btn-pagination"><ion-icon name="arrow-forward-sharp"></ion-icon></a>
-                          </div>
+                        </div>
                         <!--a href="#" class="btn1"><ion-icon name="arrow-back-sharp"></ion-icon></a>
                         <a href="#" class="btn1"><ion-icon name="arrow-forward-sharp"></ion-icon></a-->
                     </div>
-                    
-                    
+
+
                 </div>
 
                 <!-- ================= New Customers ================ -->
@@ -343,7 +355,7 @@
                                 <div class="date">22/03/2023</div>
                             </td>
                         </tr>
-s
+
                         <tr>
                             <td width="60px">
                                 <div class="imgBx"><img src="assets/imgs/customer02.jpg" alt=""></div>

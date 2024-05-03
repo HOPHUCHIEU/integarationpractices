@@ -69,7 +69,6 @@ body {
 
 .navigation ul li a {
   position: relative;
-  display: block;
   width: 100%;
   display: flex;
   text-decoration: none;
@@ -102,6 +101,25 @@ body {
   white-space: nowrap;
 }
 
+.navigation ul li a .img{
+  width: 50;
+  height: 50;
+}
+
+/*
+.navigation ul li a .title1 {
+  width: 63px;
+  height: 70px;
+  flex-shrink: 0;
+  color: #322EFF;
+  font-family: Inter;
+  font-size: 65px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-left: 65px;
+}
+*/
 /* --------- curve outside ---------- */
 .navigation ul li:hover a::before,
 .navigation ul li.hovered a::before {
@@ -516,9 +534,17 @@ body {
 nav {
 	display: flex;
 	align-items: center;
-	background: #00A9D4;
+	background: #8f33b9;
 	height: 60px;
 	position: relative;
+}
+h4{
+  color: #000;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
 }
 .icon {
 	cursor: pointer;
@@ -544,10 +570,14 @@ nav {
 
 .logo {
 	flex: 1;
-    margin-left: 10px;
-    color: #eee;
-    font-size: 45px;
-    /*font-family: 'Calibri';*/
+  margin-left: 10px;
+  /*font-family: 'Calibri';*/
+  color: #000;
+  font-family: Inter;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
 }
 
 .notifi-box {
