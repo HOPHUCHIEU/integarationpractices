@@ -13,15 +13,14 @@
 			<a class="navbar-brand" href="#">Thông tin nhân viên</a>
 		</div>
 	</nav>
-	<div class="col-md-3"></div>
-	<div class="col-md-6 well">
+	<div class="col-md-12 well">
 		<h3 class="text-primary">Chỉnh sửa thông tin nhân viên</h3>
 		<hr style="border-top:1px dotted #ccc;" />
-		<div class="col-md-12">
+		<div class="col-md-8">
 			<table class="table table-bordered">
 				<thead class="alert-info">
 					<tr>
-						<th>Name</th>
+						<th style="width: 200px;">Name</th>
 						<th>Gmail</th>
 						<th>Phone Num</th>
 						<th>Birthday</th>
@@ -34,56 +33,59 @@
 				<tbody id="result"></tbody>
 			</table>
 		</div>
-		
-		<div class="col-md-4">
-			<!-- thêm tên trường vào bảng -->
-			<div id="create">
-				<form action="javascript:void(0);" method="POST" class="form-group" onsubmit="Create()">
-					<label>Full Name:</label>
-					<input type="text" id="name" class="form-control" />
-					<label>Email:</label>
-					<input type="email" id="email" class="form-control" />
-					<label>Phone Number:</label>
-					<input type="text" id="Phone" class="form-control" />
-					<label>Birthday:</label>
-					<input type="datetime" id="Birthday" class="form-control" />
-					<label>Gender:</label>
-					<input type="text" id="Gender" class="form-control" />
-					<label>Address:</label>
-					<input type="text" id="Address" class="form-control" />
-					<label>Ethnicity:</label>
-					<input type="text" id="Ethnicity" class="form-control" />
-					<br />
-					<center><button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span>
-							Create</button></center>
-				</form>
-			</div>
-			<!--  kết thúc thêm tên trường vào bảng -->
 
-			<!-- button -->
-			<div id="edit">
-				<form action="javascript:void(0);" method="POST" class="form-group" id="update">
-					<label>Full Name:</label>
-					<input type="text" id="update_name" class="form-control" />
-					<label>Email:</label>
-					<input type="email" id="update_email" class="form-control" />
-					<label>Phone Number:</label>
-					<input type="number" id="update_phone" class="form-control" />
-					<label>Birthday:</label>
-					<input type="datetime" id="update_birthday" class="form-control" />
-					<label>Gender:</label>
-					<input type="text" id="update_gender" class="form-control" />
-					<label>Address:</label>
-					<input type="text" id="update_address" class="form-control" />
-					<label>Ethnicity:</label>
-					<input type="text" id="update_ethnicity" class="form-control" />
-					<br />
-					<center><button type="submit" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span>
-							Update</button> <button class="btn btn-danger" onclick="editHider()">&#10006; Close</button>
-					</center>
-				</form>
-			</div>
-			<!--kết thúc chỉnh sửa-->
+		<div class="col-md-4 ">
+			<div class="col-md-2"></div>
+			<div class="col-md-8">
+				<!-- thêm tên trường vào bảng -->
+				<div id="create">
+					<form action="javascript:void(0);" method="POST" class="form-group" onsubmit="Create()">
+						<label>Full Name:</label>
+						<input type="text" id="name" class="form-control" />
+						<label>Email:</label>
+						<input type="email" id="email" class="form-control" />
+						<label>Phone Number:</label>
+						<input type="text" id="Phone" class="form-control" />
+						<label>Birthday:</label>
+						<input type="datetime" id="Birthday" class="form-control" />
+						<label>Gender:</label>
+						<input type="text" id="Gender" class="form-control" />
+						<label>Address:</label>
+						<input type="text" id="Address" class="form-control" />
+						<label>Ethnicity:</label>
+						<input type="text" id="Ethnicity" class="form-control" />
+						<br />
+						<center><button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span>
+								Create</button></center>
+					</form>
+				</div>
+				<!--  kết thúc thêm tên trường vào bảng -->
+	
+				<!-- button -->
+				<div id="edit">
+					<form action="javascript:void(0);" method="POST" class="form-group" id="update">
+						<label>Full Name:</label>
+						<input type="text" id="update_name" class="form-control" />
+						<label>Email:</label>
+						<input type="email" id="update_email" class="form-control" />
+						<label>Phone Number:</label>
+						<input type="number" id="update_phone" class="form-control" />
+						<label>Birthday:</label>
+						<input type="datetime" id="update_birthday" class="form-control" />
+						<label>Gender:</label>
+						<input type="text" id="update_gender" class="form-control" />
+						<label>Address:</label>
+						<input type="text" id="update_address" class="form-control" />
+						<label>Ethnicity:</label>
+						<input type="text" id="update_ethnicity" class="form-control" />
+						<br />
+						<center><button type="submit" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span>
+								Update</button> <button class="btn btn-danger" onclick="editHider()">&#10006; Close</button>
+						</center>
+					</form>
+				</div>
+				<!--kết thúc chỉnh sửa-->
+		</div>
 		</div>
 	</div>
 </body>
